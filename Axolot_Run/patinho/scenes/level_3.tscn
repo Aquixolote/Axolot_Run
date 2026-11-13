@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_level"]
+[ext_resource type="TileSet" path="res://resources/tileset.tres" id="2_tileset"]
+[ext_resource type="PackedScene" path="res://scenes/lane.tscn" id="lane"]
+[ext_resource type="PackedScene" path="res://scenes/car.tscn" id="car"]
+[ext_resource type="PackedScene" path="res://scenes/truck.tscn" id="truck"]
+[ext_resource type="PackedScene" path="res://scenes/plank.tscn" id="plank"]
+[ext_resource type="PackedScene" path="res://scenes/plank_short.tscn" id="plank_short"]
+[ext_resource type="Texture2D" path="res://sprites/car_blue.png" id="tex_blue"]
+[ext_resource type="Texture2D" path="res://sprites/car_yellow.png" id="tex_yellow"]
+[ext_resource type="Texture2D" path="res://sprites/car_green.png" id="tex_green"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_level")
+level_name = "Fase 3 - Rio largo"
+editor_description = "Fase 3. Estrutura: Ground (chão pintado com tiles), PlayerStart (onde o patinho nasce) e Lanes (faixas de carros e tábuas)."
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 10, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 8, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 9, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 10, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 11, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 13, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 14, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 8, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 9, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 10, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 11, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 13, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 14, 0, 3, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 2, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 3, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 4, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 6, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 7, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 8, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 9, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 10, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 11, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 12, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 13, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 14, 0, 4, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 8, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 12, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 3, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 4, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 5, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 6, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 7, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 8, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 9, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 10, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 11, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 12, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 13, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 14, 0, 6, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 2, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 4, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 5, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 6, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 8, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 9, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 10, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 11, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 12, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 13, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 14, 0, 7, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 2, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 4, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 5, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 6, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 7, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 8, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 9, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 10, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 11, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 12, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 13, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 14, 0, 8, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 6, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 9, 0, 0, 0, 1, 0, 0, 0, 0, 0, 8, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 0, 0, 0, 1, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 3, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 0, 10, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 6, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 7, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 8, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 9, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 10, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 11, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 12, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 13, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0, 14, 0, 10, 0, 0, 0, 4, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_tileset")
+editor_description = "Chão da fase. Selecione este nó e use a aba TileMap (embaixo) para pintar. Cada tile do tileset tem o dado 'terrain' que define se é seguro, estrada, lama ou chegada."
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+position = Vector2(480, 672)
+editor_description = "Ponto onde o patinho nasce (e renasce)."
+
+[node name="Lanes" type="Node2D" parent="."]
+editor_description = "Todas as faixas. Cada faixa é uma instância de lane.tscn com seus carros ou tábuas dentro."
+
+[node name="Lane_Row8_Cars" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 544)
+speed = 160.0
+spacing = 384.0
+
+[node name="Obj1" parent="Lanes/Lane_Row8_Cars" instance=ExtResource("car")]
+position = Vector2(-200.0, 0)
+
+[node name="Obj2" parent="Lanes/Lane_Row8_Cars" instance=ExtResource("car")]
+position = Vector2(184.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row8_Cars/Obj2" index="0"]
+texture = ExtResource("tex_yellow")
+
+[node name="Obj3" parent="Lanes/Lane_Row8_Cars" instance=ExtResource("car")]
+position = Vector2(568.0, 0)
+
+[node name="Obj4" parent="Lanes/Lane_Row8_Cars" instance=ExtResource("car")]
+position = Vector2(952.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row8_Cars/Obj4" index="0"]
+texture = ExtResource("tex_yellow")
+
+[node name="Lane_Row7_Trucks" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 480)
+speed = -110.0
+spacing = 448.0
+
+[node name="Obj1" parent="Lanes/Lane_Row7_Trucks" instance=ExtResource("truck")]
+position = Vector2(-80.0, 0)
+
+[node name="Obj2" parent="Lanes/Lane_Row7_Trucks" instance=ExtResource("truck")]
+position = Vector2(368.0, 0)
+
+[node name="Obj3" parent="Lanes/Lane_Row7_Trucks" instance=ExtResource("truck")]
+position = Vector2(816.0, 0)
+
+[node name="Obj4" parent="Lanes/Lane_Row7_Trucks" instance=ExtResource("truck")]
+position = Vector2(1264.0, 0)
+
+[node name="Lane_Row6_Cars" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 416)
+speed = 220.0
+spacing = 448.0
+
+[node name="Obj1" parent="Lanes/Lane_Row6_Cars" instance=ExtResource("car")]
+position = Vector2(-160.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row6_Cars/Obj1" index="0"]
+texture = ExtResource("tex_green")
+
+[node name="Obj2" parent="Lanes/Lane_Row6_Cars" instance=ExtResource("car")]
+position = Vector2(288.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row6_Cars/Obj2" index="0"]
+texture = ExtResource("tex_blue")
+
+[node name="Obj3" parent="Lanes/Lane_Row6_Cars" instance=ExtResource("car")]
+position = Vector2(736.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row6_Cars/Obj3" index="0"]
+texture = ExtResource("tex_green")
+
+[node name="Obj4" parent="Lanes/Lane_Row6_Cars" instance=ExtResource("car")]
+position = Vector2(1184.0, 0)
+
+[node name="Sprite2D" parent="Lanes/Lane_Row6_Cars/Obj4" index="0"]
+texture = ExtResource("tex_blue")
+
+[node name="Lane_Row4_Planks" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 288)
+speed = -100.0
+spacing = 512.0
+flip_by_direction = false
+
+[node name="Obj1" parent="Lanes/Lane_Row4_Planks" instance=ExtResource("plank")]
+position = Vector2(-200.0, 0)
+
+[node name="Obj2" parent="Lanes/Lane_Row4_Planks" instance=ExtResource("plank")]
+position = Vector2(312.0, 0)
+
+[node name="Obj3" parent="Lanes/Lane_Row4_Planks" instance=ExtResource("plank")]
+position = Vector2(824.0, 0)
+
+[node name="Lane_Row3_Planks" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 224)
+speed = 130.0
+spacing = 448.0
+flip_by_direction = false
+
+[node name="Obj1" parent="Lanes/Lane_Row3_Planks" instance=ExtResource("plank_short")]
+position = Vector2(-120.0, 0)
+
+[node name="Obj2" parent="Lanes/Lane_Row3_Planks" instance=ExtResource("plank_short")]
+position = Vector2(328.0, 0)
+
+[node name="Obj3" parent="Lanes/Lane_Row3_Planks" instance=ExtResource("plank_short")]
+position = Vector2(776.0, 0)
+
+[node name="Obj4" parent="Lanes/Lane_Row3_Planks" instance=ExtResource("plank_short")]
+position = Vector2(1224.0, 0)
+
+[node name="Lane_Row2_Planks" parent="Lanes" instance=ExtResource("lane")]
+position = Vector2(0, 160)
+speed = -140.0
+spacing = 512.0
+flip_by_direction = false
+
+[node name="Obj1" parent="Lanes/Lane_Row2_Planks" instance=ExtResource("plank")]
+position = Vector2(-50.0, 0)
+
+[node name="Obj2" parent="Lanes/Lane_Row2_Planks" instance=ExtResource("plank")]
+position = Vector2(462.0, 0)
+
+[node name="Obj3" parent="Lanes/Lane_Row2_Planks" instance=ExtResource("plank")]
+position = Vector2(974.0, 0)

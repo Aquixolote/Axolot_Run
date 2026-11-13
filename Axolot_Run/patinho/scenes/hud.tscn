@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://sprites/heart.png" id="2_heart"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_script")
+editor_description = "Interface: corações, nome da fase, tempo e mensagens. Lógica em scripts/hud.gd."
+
+[node name="TopBar" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="Hearts" type="HBoxContainer" parent="TopBar"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+editor_description = "Um TextureRect por vida possível. Para ter mais vidas, duplique um coração aqui (e mude 'lives' na fase)."
+
+[node name="Heart1" type="TextureRect" parent="TopBar/Hearts"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_heart")
+
+[node name="Heart2" type="TextureRect" parent="TopBar/Hearts"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_heart")
+
+[node name="Heart3" type="TextureRect" parent="TopBar/Hearts"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_heart")
+
+[node name="LevelLabel" type="Label" parent="TopBar"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 5.0
+offset_right = 600.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+
+[node name="TimeLabel" type="Label" parent="TopBar"]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 5.0
+offset_right = 950.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 2
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dim" type="ColorRect" parent="Overlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Message" type="Label" parent="Overlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 44
+horizontal_alignment = 1
+vertical_alignment = 1
