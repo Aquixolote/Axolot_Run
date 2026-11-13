@@ -1,69 +1,70 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://cosc4x7aqdq5n"]
 
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://sprites/heart.png" id="2_heart"]
+[ext_resource type="Script" uid="uid://c57mxqpeekadi" path="res://scripts/hud.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ciplso40ihjqy" path="res://sprites/heart.png" id="2_heart"]
 
-[node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_script")
+[node name="HUD" type="CanvasLayer" unique_id=1558310833]
 editor_description = "Interface: corações, nome da fase, tempo e mensagens. Lógica em scripts/hud.gd."
+script = ExtResource("1_script")
 
-[node name="TopBar" type="ColorRect" parent="."]
+[node name="TopBar" type="ColorRect" parent="." unique_id=938862174]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 40.0
+offset_top = -1.0
+offset_bottom = 63.0
 grow_horizontal = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.35)
+color = Color(1.4963166, 0.5506203, 1.2887247, 0)
 
-[node name="Hearts" type="HBoxContainer" parent="TopBar"]
+[node name="Hearts" type="HBoxContainer" parent="TopBar" unique_id=2045061621]
+editor_description = "Um TextureRect por vida possível. Para ter mais vidas, duplique um coração aqui (e mude 'lives' na fase)."
 layout_mode = 0
-offset_left = 8.0
-offset_top = 4.0
-offset_right = 128.0
-offset_bottom = 36.0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 174.0
+offset_bottom = 40.0
 mouse_filter = 2
 theme_override_constants/separation = 6
-editor_description = "Um TextureRect por vida possível. Para ter mais vidas, duplique um coração aqui (e mude 'lives' na fase)."
 
-[node name="Heart1" type="TextureRect" parent="TopBar/Hearts"]
-layout_mode = 2
-mouse_filter = 2
+[node name="Sprite2D" type="Sprite2D" parent="TopBar/Hearts" unique_id=290646615]
+position = Vector2(24.5, 24.500004)
+scale = Vector2(3.4705882, 3.6875002)
 texture = ExtResource("2_heart")
 
-[node name="Heart2" type="TextureRect" parent="TopBar/Hearts"]
-layout_mode = 2
-mouse_filter = 2
+[node name="Sprite2D2" type="Sprite2D" parent="TopBar/Hearts" unique_id=943366906]
+position = Vector2(91, 24)
+scale = Vector2(3.764706, 3.625)
 texture = ExtResource("2_heart")
 
-[node name="Heart3" type="TextureRect" parent="TopBar/Hearts"]
-layout_mode = 2
-mouse_filter = 2
+[node name="Sprite2D3" type="Sprite2D" parent="TopBar/Hearts" unique_id=1739039449]
+position = Vector2(155, 24.500002)
+scale = Vector2(3.8823533, 3.6875002)
 texture = ExtResource("2_heart")
 
-[node name="LevelLabel" type="Label" parent="TopBar"]
+[node name="LevelLabel" type="Label" parent="TopBar" unique_id=1506739774]
 layout_mode = 0
-offset_left = 150.0
+offset_left = 395.0
 offset_top = 5.0
-offset_right = 600.0
-offset_bottom = 35.0
+offset_right = 701.0
+offset_bottom = 65.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 22
 
-[node name="TimeLabel" type="Label" parent="TopBar"]
+[node name="TimeLabel" type="Label" parent="TopBar" unique_id=1231690903]
 layout_mode = 0
-offset_left = 730.0
+offset_left = 779.0
 offset_top = 5.0
 offset_right = 950.0
-offset_bottom = 35.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 2
 
-[node name="Overlay" type="Control" parent="."]
+[node name="Overlay" type="Control" parent="." unique_id=1027602054]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Dim" type="ColorRect" parent="Overlay"]
+[node name="Dim" type="ColorRect" parent="Overlay" unique_id=1827394470]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -83,7 +84,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.55)
 
-[node name="Message" type="Label" parent="Overlay"]
+[node name="Message" type="Label" parent="Overlay" unique_id=864606911]
 visible = false
 layout_mode = 1
 anchors_preset = 15
